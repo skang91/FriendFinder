@@ -1,7 +1,7 @@
-var friendList = [
+var friends = [
     {
           name: 'Jenny',
-          profilePic: '',
+          photo: '',
           scores: [
             "3",
             "3",
@@ -17,7 +17,7 @@ var friendList = [
       },
     {
           name: 'Timothy',
-          profilePic: '',
+          photo: '',
           scores: [
             "5",
             "5",
@@ -33,7 +33,7 @@ var friendList = [
       },
       {
           name: 'Psy',
-          profilePic: '',
+          photo: '',
           scores: [
             "1",
             "1",
@@ -48,4 +48,4 @@ var friendList = [
           ]
       }
   ]
-  module.exports = friendList;
+  module.exports = friends;

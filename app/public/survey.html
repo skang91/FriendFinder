@@ -4,15 +4,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<title>Friend Finder | Survey</title>
 </head>
 <body>
 	<div class="container">
 		<h4><strong>Survey Questions</strong></h4>
+		<hr>
+		<form>
 		<h4><strong>About You</strong></h4>
 		<h5>Name (Required)</h5>
 		<input type="text" name="userName" id="nameInput" class="form-control" placeholder="John Smith" required>
@@ -148,96 +148,70 @@
 		<br>
 		
 		<!--Sumbit-->
-        <button type ="submit" data-target="modal1" class="btn modal-trigger btn-primary btn-lg btn-block" id="submitBtn"><i class="fa fa-check-circle"></i>Submit</button>
+		<button type="submit" class="btn btn-primary btn-lg btn-block active" data-toggle="modal" data-target="#myModal" id="submit"><i class="fa fa-check-circle"></i>Submit</button>
 		<hr>
-
+		</form>
 		<div>
 			<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/skang91/FriendFinder.git">Github Repo</a></p>
 		</div>
 	</div>
 
-		<!-- Modal -->
-        <div id="modal1" class="modal">
-			<div class="modal-content">
-			  <h4>Friend Match</h4>
-			  <h5 id="matchName"></h5>
-			  <img id="matchPic" src="" alt="No Image" width = 250px>
-			</div>
-		  <div class="modal-footer">
-			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Done</a>
-		  </div>
+<!-- Modal -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title">Friend Match</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
 		</div>
-  
+		<div class="modal-body">
+		  <h5 id="friendName"></h5>
+		  <img id="friendImg" class="mx-auto" style="max-width:400px;" />
+		</div>
+	  </div>
+	</div>
+  </div>
 
-	<!--To Server-->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#submitBtn").on("click", function() {
-				function validateForm() {
-					var isValid = true;
-					$('.validate').each(function() {
-						if ($(this).val() === ''){
-							isValid = false;
-						}
-					});
-		
-					$('.browser-default').each(function() {
-						if ($(this).val() === ""){
-							isValid = false;
-						}
-					});
-		
-					return isValid;
-				}
-		
-				if (validateForm() == true) {
-					var newFriend = {
-						name: $('#name').val().trim(),
-						profilePic: $('#photo').val().trim(),
-						scores: [
-							$('#q1').val(),
-							$('#q2').val(),
-							$('#q3').val(),
-							$('#q4').val(),
-							$('#q5').val(),
-							$('#q6').val(),
-							$('#q7').val(),
-							$('#q8').val(),
-							$('#q9').val(),
-							$('#q10').val(),
-						]
-					};
-		
-					var currentURL = window.location.origin;
-		
-					$.post(currentURL + "/api/friends", newFriend, function(data) {
-						$("#matchName").text(data.name);
-						$("#matchPic").attr("src", data.profilePic);
-		
-					});
+<script type='text/javascript'>
+  $('#submit').on('click', function(event) {
+		  event.preventDefault();
+		  
+	  const newFriend = {
+		  name: $('#nameInput').val().trim(),
+		  photo: $('#photoInput').val().trim(),
+		  scores: [
+			  $('input[name=q1inlineRadioOptions]:checked').val(),
+			  $('input[name=q2inlineRadioOptions]:checked').val(),
+			  $('input[name=q3inlineRadioOptions]:checked').val(),
+			  $('input[name=q4inlineRadioOptions]:checked').val(),
+			  $('input[name=q5inlineRadioOptions]:checked').val(),
+			  $('input[name=q6inlineRadioOptions]:checked').val(),
+			  $('input[name=q7inlineRadioOptions]:checked').val(),
+			  $('input[name=q8inlineRadioOptions]:checked').val(),
+			  $('input[name=q9inlineRadioOptions]:checked').val(),
+			  $('input[name=q10inlineRadioOptions]:checked').val()	
+		  ]
+	  }	
 
-					// show modal
-					$('.modal').modal();
-		
-					//clear form 
-					$('#name').val("");
-					$('#photo').val("");
-					$('#q1').val("");
-					$('#q2').val("");
-					$('#q3').val("");
-					$('#q4').val("");
-					$('#q5').val("");
-					$('#q6').val("");
-					$('#q7').val("");
-					$('#q8').val("");
-					$('#q9').val("");
-					$('#q10').val("");
-				} else {
-					alert("Please fill out ALL fields before submitting survey!")
-				}
-		
-			});
-		});
+
+	  newFriend.scores = newFriend.scores.map(parseFloat);
+	  console.log(newFriend)
+
+	  $.post('/api/friends', newFriend)
+		  .then(function(data) {
+			  console.log(data)
+			if (data){
+			  $("#friendName").text('You have matched with ' + data.matchName + '!');
+			  $("#friendImg").attr("src", data.matchImg);
+			  $(".modal").modal("toggle");
+			} else {
+			  alert('Please complete entire form before submitting.');
+			}
+	  });
+  });
 </script>
+
 </body>
 </html>
