@@ -1,161 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<title>Friend Finder | Survey</title>
 </head>
 <body>
-	<div class='container'>
-		<div class='card-panel grey lighten-3 col s12 center-align'>
-			<h4><strong>Survey Questions</strong></h4>
-			<div class='card-panel left-align white'>
-				<h4><strong>About You</strong></h4>
-				<h5>Name (Required)</h5>
-				<input type="text" name="userName" id="nameInput" class="form-control" placeholder="John Smith" required>
-				<div class="invalid-feedback">Please enter in name</div>
-				<br>
-				<h5>Link to Photo Image (Required)</h5>
-				<input type="text" name="photo" id="photoInput" class="form-control" placeholder="Insert link to photo" required>
-				<div class="invalid-feedback">Please insert a link to your photo</div>
-				<br>
-				<br>
+	<div class="container">
+		<h4><strong>Survey Questions</strong></h4>
+		<h4><strong>About You</strong></h4>
+		<h5>Name (Required)</h5>
+		<input type="text" name="userName" id="nameInput" class="form-control" placeholder="John Smith" required>
+		<br>
+		<h5>Link to Photo Image (Required)</h5>
+		<input type="text" name="photo" id="photoInput" class="form-control" placeholder="Insert link to photo" required>
+		<br>
+		<br>
 
-				<h4><strong>Question 1</strong></h4>
-				<h5>You find it difficult to introduce yourself to other people.</h5>
-				<select data-placeholder="" class="browser-default" id="q1">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
+		<h4><strong>Question 1</strong></h4>
+		<h5>You find it difficult to introduce yourself to other people.</h5>
+		<select data-placeholder="" class="browser-default" id="q1">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
 
-				<h4><strong>Question 2</strong></h4>
-				<h5>If your friend is sad about something, you are more likely to offer emotional support than suggest ways to deal with the problem.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
+		<h4><strong>Question 2</strong></h4>
+		<h5>If your friend is sad about something, you are more likely to offer emotional support than suggest ways to deal with the problem.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
 
-				<h4><strong>Question 3</strong></h4>
-				<h5>It is often difficult for you to relate to other people's feelings.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
+		<h4><strong>Question 3</strong></h4>
+		<h5>It is often difficult for you to relate to other people's feelings.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
 
-				<h4><strong>Question 4</strong></h4>
-				<h5>You do not usually initiate conversations.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
+		<h4><strong>Question 4</strong></h4>
+		<h5>You do not usually initiate conversations.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
 
-				<h4><strong>Question 5</strong></h4>
-				<h5>You rarely do something just out of sheer curiosity. </h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
-				<h4><strong>Question 6</strong></h4>
-				<h5>You are usually highly motivated and energetic.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
-				<h4><strong>Question 7</strong></h4>
-				<h5>You do not mind being at the center of attention.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
-				<h4><strong>Question 8</strong></h4>
-				<h5>Your travel plans are usually well thought out.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
-				<h4><strong>Question 9</strong></h4>
-				<h5>You are more of a natural improviser than a careful planner.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
-				<h4><strong>Question 10</strong></h4>
-				<h5>Keeping your options open is more important than having a to-do list.</h5>
-                <select data-placeholder="" class="browser-default" id="q2">
-                    <option value="">Choose an option</option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-				<br>
-				<br>
-                <!--Sumbit-->
-                <button type ="submit" data-target="modal1" class="waves-effect waves-light btn modal-trigger cyan lighten-1" id="submitBtn">Submit</button>
-			</div>
-		</div>
+		<h4><strong>Question 5</strong></h4>
+		<h5>You rarely do something just out of sheer curiosity. </h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
+		<h4><strong>Question 6</strong></h4>
+		<h5>You are usually highly motivated and energetic.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
+		<h4><strong>Question 7</strong></h4>
+		<h5>You do not mind being at the center of attention.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
+		<h4><strong>Question 8</strong></h4>
+		<h5>Your travel plans are usually well thought out.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
+		<h4><strong>Question 9</strong></h4>
+		<h5>You are more of a natural improviser than a careful planner.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
+		<h4><strong>Question 10</strong></h4>
+		<h5>Keeping your options open is more important than having a to-do list.</h5>
+		<select data-placeholder="" class="browser-default" id="q2">
+			<option value="">Choose an option</option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<br>
+		<br>
+		
+		<!--Sumbit-->
+        <button type ="submit" data-target="modal1" class="btn btn-primary btn-lg btn-block" id="submitBtn"><i class="fa fa-check-circle"></i>Submit</button>
+		<hr>
+
 		<div>
 			<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/skang91/FriendFinder.git">Github Repo</a></p>
 		</div>
-		
+	</div>
+
 		<!-- Modal -->
         <div id="modal1" class="modal">
 			<div class="modal-content">
@@ -164,11 +164,10 @@
 			  <img id="matchPic" src="" alt="No Image" width = 250px>
 			</div>
 		  <div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Done</a>
 		  </div>
 		</div>
   
-	  </div>
 
 	<!--To Server-->
 	<script type="text/javascript">
@@ -218,7 +217,7 @@
 					});
 
 					// show modal
-						$('.modal').modal();
+					$('.modal').modal();
 		
 					//clear form 
 					$('#name').val("");
