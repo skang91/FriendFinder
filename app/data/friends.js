@@ -1,7 +1,7 @@
 var friends = [
 	{
     name: "Jennie",
-    photo: "https://i.pinimg.com/736x/b0/d5/11/b0d5115db2fe549ff57aad329d4b3260.jpg",
+    photo: "https://kidolprofile.weebly.com/uploads/9/8/5/8/98586920/published/blackpink-jennie-kim.jpeg?1489865822",
 		scores: [5, 1, 2, 3, 1, 2, 5, 1, 1, 1]
   },
   {
